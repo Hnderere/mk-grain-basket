@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MK Grain Basket</title>
+
+<style>
+:root{
+  --green:#1faa59;
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg)}
+.wrap{max-width:1200px;margin:auto;padding:20px}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-small{
+  height:40px;
+  width:auto;
+}
+
+nav a{margin-left:14px;font-weight:600;color:#374151}
+nav a.cta{
+  background:var(--green);
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+}
+
+/* HERO */
+.hero{
+  margin-top:14px;
+  background:#111;
+  color:white;
+  padding:8px;
+  border-radius:14px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.hero img{
+  width:300.5px;
+  height:192.8px;
+  object-fit:contain;
+}
+
+/* SECTIONS */
+section{margin-top:32px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px;
+}
+.card{
+  background:green;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.product input{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+}
+
+/* CART BUTTON */
+.cart-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--green);
+  color:white;
+  padding:14px 20px;
+  border-radius:30px;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  justify-content:center;
+  align-items:center;
+}
+.modal-content{
+  background:white;
+  padding:20px;
+  width:90%;
+  max-width:600px;
+  border-radius:14px;
+}
+.modal table{
+  width:100%;
+  border-collapse:collapse;
+}
+.modal th,.modal td{
+  padding:8px;
+  border-bottom:1px solid #e5e7eb;
+}
+.modal button{
+  margin-top:14px;
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  font-weight:700;
+}
+.modal textarea{
+  width:100%;
+  padding:5px;
+  margin-bottom:12px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  resize:none;
+  font-family:inherit;
+}
+
+.close{background:#e5e7eb}
+.checkout{background:var(--green);color:white}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <img src="logo.jpg" class="logo-small" alt="MK Grain Basket">
+    <div class="brand-text">
+    <strong>MK Grain Basket</strong><br>
+    <small>Cereals & Home Assorted Goods</small>
+  </div>
+ </div>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="logo.jpg" alt="Logo">
+  <div>
+    <h1>Where Quality Is Guaranteed</h1>
+    <p>
+     Supplying high-quality cereals and essential household goods.<br>
+     Serving <strong>Zambezi, Gitaru & Kiambaa areas</strong>.
+    </p>
+
+  </div>
+</section>
+
+<!-- CEREALS -->
+<section id="products">
+<h2>Cereals (Price per KG)</h2>
+<div class="grid">
+
+<div class="card product">
+<strong>Maize – KES 50</strong>
+<input type="number" step="0.01" min="0" data-name="Maize" data-price="50">
+</div>
+
+<div class="card product">
+<strong>Yellow Beans – KES 250</strong>
+<input type="number" step="0.01" min="0" data-name="Yellow Beans" data-price="250">
+</div>
+
+<div class="card product">
+<strong>Nyayo Beans – KES 130</strong>
+<input type="number" step="0.01" min="0" data-name="Nyayo Beans" data-price="130">
+</div>
+
+<div class="card product">
+<strong>Wairimu Beans – KES 90</strong>
+<input type="number" step="0.01" min="0" data-name="Wairimu Beans" data-price="90">
+</div>
+
+<div class="card product">
+<strong>Pishori Rice – KES 200</strong>
+<input type="number" step="0.01" min="0" data-name="Pishori Rice" data-price="200">
+</div>
+
+  <div class="card product">
+      <strong>Noe Beans - KES 250</strong>
+      <input type="number" step="0.01" min="0" data-name="Noe Beans"data-price="250">
+    </div>
+
+<div class="card product">
+      <strong>Long Grain Rice - KES 250</strong>
+      <input type="number" step="0.01" min="0" data-name="Long Grain Rice"data-price="250">
+    </div>
+
+<div class="card product">
+      <strong>Sunrise Rice - KES 150</strong>
+      <input type="number" step="0.01" min="0" data-name="Sunrise Rice"data-price="150">
+    </div>
+
+<div class="card product">
+      <strong>Basmati Rice - KES 150</strong>
+      <input type="number" step="0.01" min="0" data-name="Basmati Rice"data-price="150">
+    </div>
+
+<div class="card product">
+      <strong>Sindano Rice - KES 160</strong>
+      <input type="number" step="0.01" min="0" data-name="Sindano Rice"data-price="150">
+    </div>
+
+<div class="card product">
+      <strong>Ndengu Special - KES 90</strong>
+      <input type="number" step="0.01" min="0" data-name="Ndengu Special"data-price="90">
+    </div>
+
+<div class="card product">
+      <strong>Kunde - KES 110</strong>
+      <input type="number" step="0.01" min="0" data-name="Kunde"data-price="90">
+    </div>
+
+<div class="card product">
+      <strong>Thoroko - KES 130</strong>
+      <input type="number" step="0.01" min="0" data-name="Thoroko"data-price="130">
+    </div>
+
+<div class="card product">
+      <strong>Njahi - KES 150</strong>
+      <input type="number" step="0.01" min="0" data-name="Njahi"data-price="150">
+    </div>
+
+<div class="card product">
+      <strong>Red Karanga - KES 260</strong>
+      <input type="number" step="0.01" min="0" data-name="Red Karanga"data-price="260">
+    </div>
+
+<div class="card product">
+      <strong>White Karanga - KES 250</strong>
+      <input type="number" step="0.01" min="0" data-name="White Karanga"data-price="250">
+    </div>
+  </div>
+
+</section>
+</div>
+</section>
+
+<!-- HOME GOODS -->
+<section id="products">
+<h2>Home Assorted Goods</h2>
+<div class="grid">
+
+<div class="card product"><strong>Menengai Soap 1kg</strong><input type="number" min="0" step="0.01" data-name="Menengai Soap 1kg" data-price="0"></div>
+<div class="card product"><strong>Menengai Soap 800g</strong><input type="number" min="0" step="0.01" data-name="Menengai Soap 800g" data-price="0"></div>
+<div class="card product"><strong>Hanan Tissue</strong><input type="number" min="0" step="0.01" data-name="Hanan Tissue" data-price="0"></div>
+<div class="card product"><strong>Sifa Tissue</strong><input type="number" min="0" step="0.01" data-name="Sifa Tissue" data-price="0"></div>
+<div class="card product"><strong>Serviettes</strong><input type="number" min="0" step="0.01" data-name="Serviettes" data-price="0"></div>
+<div class="card product"><strong>Sanitary Towels</strong><input type="number" min="0" step="0.01" data-name="Sanitary Towels" data-price="0"></div>
+<div class="card product"><strong>Baby Diapers</strong><input type="number" min="0" step="0.01" data-name="Baby Diapers" data-price="0"></div>
+<div class="card product"><strong>Salt</strong><input type="number" min="0" step="0.01" data-name="Salt" data-price="0"></div>
+<div class="card product"><strong>Sugar</strong><input type="number" min="0" step="0.01" data-name="Sugar" data-price="0"></div>
+<div class="card product"><strong>Tea Leaves</strong><input type="number" min="0" step="0.01" data-name="Tea Leaves" data-price="0"></div>
+<div class="card product"><strong>Omo</strong><input type="number" min="0" step="0.01" data-name="Omo" data-price="0"></div>
+
+</div>
+</section>
+
+<button class="cart-btn" onclick="openCart()">View Order</button>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="card">
+    <p><strong>MK Grain Basket</strong></p>
+    <p>📍 Zambezi, Gitaru & Kiambaa</p>
+    <p>📞 +254 700 889 948</p>
+  </div>
+</section>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <h3>Order Preview</h3>
+
+    <label>Customer Name</label>
+    <textarea id="custName" rows="2" placeholder="Your Name"></textarea>
+
+    <label>Delivery Location</label>
+    <textarea id="custLocation" rows="2" placeholder="Delivery Location"></textarea>
+
+
+    <table id="cartTable"></table>
+
+    <button onclick="printInvoice()">Print Invoice</button>
+
+    <button class="checkout" onclick="checkout()">Confirm & WhatsApp Order</button>
+    <button class="close" onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<script>
+function openCart(){
+  const inputs=document.querySelectorAll('input');
+  let total=0;
+  let html=`<tr><th>Item</th><th>Qty</th><th>Total</th></tr>`;
+  let msg=[];
+
+  inputs.forEach(i=>{
+    const qty=parseFloat(i.value);
+    if(qty>0){
+      const price=parseFloat(i.dataset.price)||0;
+      const line=qty*price;
+      total+=line;
+      html+=`<tr><td>${i.dataset.name}</td><td>${qty}</td><td>KES ${line.toFixed(2)}</td></tr>`;
+      msg.push(`${i.dataset.name} - ${qty} (${line.toFixed(2)} KES)`);
+    }
+  });
+
+  if(total===0){alert("No items selected");return;}
+
+  html+=`<tr><th colspan="2">Grand Total</th><th>KES ${total.toFixed(2)}</th></tr>`;
+  document.getElementById("cartTable").innerHTML=html;
+  document.getElementById("cartModal").style.display="flex";
+  window.orderMessage=msg.join("\n");
+  window.orderTotal=total.toFixed(2);
+}
+
+function closeCart(){
+  document.getElementById("cartModal").style.display="none";
+}
+
+function checkout(){
+  const name = document.getElementById("custName").value.trim();
+  const location = document.getElementById("custLocation").value.trim();
+
+  if(!name || !location){
+    alert("Please enter your name and delivery location");
+    return;
+  }
+
+  let message = `INVOICE – MK GRAIN BASKET%0A`;
+  message += `------------------------%0A`;
+  message += `Customer: ${name}%0A`;
+  message += `Delivery: ${location}%0A%0A`;
+
+  let total = 0;
+  let vatTotal = 0;
+
+  document.querySelectorAll("input[data-name]").forEach(input => {
+    const qty = parseFloat(input.value);
+    if(qty > 0){
+      const price = parseFloat(input.dataset.price);
+      const lineTotal = qty * price;
+      const vat = lineTotal * 16 / 116;
+
+      total += lineTotal;
+      vatTotal += vat;
+
+      message += `${input.dataset.name} – ${qty}kg  KES ${lineTotal.toFixed(2)}%0A`;
+    }
+  });
+
+  message += `%0A------------------------%0A`;
+  message += `Total (VAT Incl): KES ${total.toFixed(2)}%0A`;
+  message += `VAT (16%): KES ${vatTotal.toFixed(2)}%0A`;
+  message += `------------------------%0A`;
+  message += `Thank you for shopping with MK Grain Basket`;
+
+  const phone = "254700889948";
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+}
+
+
+function printInvoice(){
+  const name = document.getElementById("custName")?.value || "N/A";
+  const location = document.getElementById("custLocation")?.value || "N/A";
+
+  const invoiceNo = "INV-" + Date.now();
+  const date = new Date().toLocaleDateString();
+  const VAT_RATE = 16 / 116;
+
+  let itemsHTML = `
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Line Total (KES)</th>
+        <th>VAT (KES)</th>
+        <th>Net (KES)</th>
+      </tr>
+  `;
+
+  let grandTotal = 0;
+  let totalVAT = 0;
+  let totalNet = 0;
+
+  document.querySelectorAll("input[data-name]").forEach(input => {
+    const qty = parseFloat(input.value);
+    if (qty > 0) {
+      const price = parseFloat(input.dataset.price);
+      const lineTotal = qty * price;
+
+      const vat = lineTotal * VAT_RATE;
+      const net = lineTotal - vat;
+
+      grandTotal += lineTotal;
+      totalVAT += vat;
+      totalNet += net;
+
+      itemsHTML += `
+        <tr>
+          <td>${input.dataset.name}</td>
+          <td>${qty}</td>
+          <td>${lineTotal.toFixed(2)}</td>
+          <td>${vat.toFixed(2)}</td>
+          <td>${net.toFixed(2)}</td>
+        </tr>
+      `;
+    }
+  });
+
+  itemsHTML += `
+      <tr>
+        <th colspan="2">Totals</th>
+        <th>${grandTotal.toFixed(2)}</th>
+        <th>${totalVAT.toFixed(2)}</th>
+        <th>${totalNet.toFixed(2)}</th>
+      </tr>
+    </table>
+  `;
+
+  const win = window.open('', '', 'width=900,height=700');
+
+win.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invoice - MK Grain Basket</title>
+
+<style>
+:root{
+  --primary:#2e7d32;
+  --secondary:#81c784;
+  --accent:#f1f8e9;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f9fafb;
+  padding:30px;
+}
+
+.invoice-box{
+  background:white;
+  max-width:900px;
+  margin:auto;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+
+.header{
+  background:var(--primary);
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.header img{
+  height:70px;
+}
+
+.header .company{
+  text-align:right;
+}
+
+.section{
+  padding:20px 25px;
+}
+
+.info{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.info div{
+  line-height:1.6;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:var(--secondary);
+  color:#1b5e20;
+  padding:10px;
+  text-align:left;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.summary{
+  margin-top:20px;
+  width:40%;
+  float:right;
+}
+
+.summary td{
+  padding:8px;
+}
+
+.summary tr:last-child td{
+  font-weight:bold;
+  border-top:2px solid var(--primary);
+}
+
+.footer{
+  clear:both;
+  margin-top:40px;
+  padding:15px;
+  background:var(--accent);
+  font-size:13px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="invoice-box">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="logo.jpg">
+    <div class="company">
+      <strong>MK Grain Basket</strong><br>
+      VAT Inclusive Pricing<br>
+      +254 700 889 948
+    </div>
+  </div>
+
+  <!-- CUSTOMER INFO -->
+  <div class="section">
+    <div class="info">
+      <div>
+        <strong>Billed To:</strong><br>
+        ${name}<br>
+        ${location}
+      </div>
+      <div>
+        <strong>Invoice No:</strong> ${invoiceNo}<br>
+        <strong>Date:</strong> ${date}
+      </div>
+    </div>
+
+    <!-- ITEMS TABLE -->
+    ${itemsHTML}
+
+    <!-- TOTALS -->
+    <table class="summary">
+      <tr>
+        <td>Total (VAT Incl.)</td>
+        <td>KES ${grandTotal.toFixed(2)}</td>
+      </tr>
+      <tr>
+        <td>Total VAT (16%)</td>
+        <td>KES ${totalVAT.toFixed(2)}</td>
+      </tr>
+      <tr>
+        <td>Net Amount</td>
+        <td>KES ${totalNet.toFixed(2)}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Prices are VAT inclusive • Thank you for shopping with MK Grain Basket
+  </div>
+
+</div>
+
+</body>
+</html>
+`);
+
+
+  win.document.close();
+  win.focus();
+  win.print();
+}
+
+</script>
+
+
+</body>
+</html>
