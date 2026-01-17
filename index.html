@@ -42,7 +42,6 @@ nav a.cta{
   padding:8px 14px;
   border-radius:8px;
 }
-<button onclick="openAdminLogin()" class="admin-btn">Admin</button>
 
 /* HERO */
 .hero{
@@ -135,17 +134,7 @@ section{margin-top:32px}
   resize:none;
   font-family:inherit;
 }
-<div class="modal" id="adminModal">
-  <div class="modal-content">
-    <h3>Admin Login</h3>
 
-    <input type="password" id="adminPass" placeholder="Enter Admin PIN">
-
-    <button onclick="adminLogin()">Login</button>
-    <button class="close" onclick="closeAdmin()">Close</button>
-  </div>
-</div>
-  
 .close{background:#e5e7eb}
 .checkout{background:var(--green);color:white}
 </style>
@@ -383,18 +372,6 @@ function checkout(){
 
       total += lineTotal;
       vatTotal += vat;
-
-      // SAVE ORDER FOR ADMIN DASHBOARD
-let orders = JSON.parse(localStorage.getItem("orders") || "[]");
-
-orders.push({
-  customer: name,
-  location: location,
-  total: total,
-  date: new Date().toLocaleString()
-});
-
-localStorage.setItem("orders", JSON.stringify(orders));
 
       message += `${input.dataset.name} – ${qty}kg  KES ${lineTotal.toFixed(2)}%0A`;
     }
@@ -637,30 +614,9 @@ td{
   win.focus();
   win.print();
 }
-const ADMIN_PIN = "1234"; // change this
-
-function openAdminLogin(){
-  document.getElementById("adminModal").style.display = "block";
-}
-
-function closeAdmin(){
-  document.getElementById("adminModal").style.display = "none";
-}
-
-function adminLogin(){
-  const pass = document.getElementById("adminPass").value;
-  if(pass === ADMIN_PIN){
-    localStorage.setItem("isAdmin", "true");
-    window.location.href = "admin.html";
-  } else {
-    alert("Invalid PIN");
-  }
-}
 
 </script>
 
 
 </body>
 </html>
-
-
